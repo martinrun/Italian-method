@@ -15,7 +15,9 @@ function onYouTubeIframeAPIReady() {
                 'controls': 1,
                 'rel': 0,
                 'showinfo': 0,
-                'modestbranding': 1
+                'modestbranding': 1,
+                'enablejsapi': 1,
+                'origin': window.location.origin
             },
             events: {
                 'onStateChange': onPlayerStateChange,
@@ -39,6 +41,8 @@ function onPlayerReady(event) {
     if (savedPosition) {
         player.seekTo(parseFloat(savedPosition));
     }
+    // Ensure video is paused on load
+    player.pauseVideo();
 }
 
 // Initialize when the page loads
