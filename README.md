@@ -1,16 +1,6 @@
 # L'Italiano Secondo Il Metodo Natura
 
-A modern website for learning Italian using the Natural Method (Metodo Natura). This website provides an interactive and engaging platform for students to learn Italian through immersion and natural language acquisition.
-
-## Features
-
-- Responsive design that works on all devices
-- Interactive lessons for different proficiency levels
-- Modern and user-friendly interface
-- Smooth scrolling navigation
-- Contact form for inquiries
-- Mobile-friendly navigation menu
-- Scroll-based animations for better user experience
+I'm learning Italian
 
 ## Technologies Used
 
@@ -45,7 +35,7 @@ italian-method/
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
+Don't...
 
 ## License
 
