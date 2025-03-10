@@ -4,20 +4,25 @@ let currentVideoId;
 
 // Initialize YouTube Player
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('lesson-video', {
-        videoId: currentVideoId,
-        playerVars: {
-            'autoplay': 0,
-            'controls': 1,
-            'rel': 0,
-            'showinfo': 0,
-            'modestbranding': 1
-        },
-        events: {
-            'onStateChange': onPlayerStateChange,
-            'onReady': onPlayerReady
-        }
-    });
+    const videoIframe = document.getElementById('lesson-video');
+    if (videoIframe) {
+        currentVideoId = videoIframe.getAttribute('data-video-id');
+
+        player = new YT.Player('lesson-video', {
+            videoId: currentVideoId,
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+                'rel': 0,
+                'showinfo': 0,
+                'modestbranding': 1
+            },
+            events: {
+                'onStateChange': onPlayerStateChange,
+                'onReady': onPlayerReady
+            }
+        });
+    }
 }
 
 // Save video position when player state changes
@@ -38,14 +43,9 @@ function onPlayerReady(event) {
 
 // Initialize when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    const videoIframe = document.getElementById('lesson-video');
-    if (videoIframe) {
-        currentVideoId = videoIframe.getAttribute('data-video-id');
-
-        // Load YouTube API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
+    // Load YouTube API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 });
