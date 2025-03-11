@@ -9,7 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #fff;
-    background: #000 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/background.jpg') center/cover fixed;
+    background: #000 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/background.jpg') center/cover fixed;
     min-height: 100vh;
     padding-top: 60px;
 }
