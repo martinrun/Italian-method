@@ -12,6 +12,11 @@ body {
     background-color: #000000;
     min-height: 100vh;
     padding-top: 60px; /* Reduced padding to account for smaller header */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498307833015-e7b400441eb8');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 h1, h2, h3 {
@@ -20,34 +25,44 @@ h1, h2, h3 {
 
 /* Header and Navigation */
 header {
-    background: #000000;
-    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header.nav-hidden {
     transform: translateY(-100%);
 }
 
-nav {
-    padding: 0.5rem 5%; /* Reduced padding */
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
+header .logo,
 .logo {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
     color: #ffffff;
     text-decoration: none;
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     text-shadow: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 2rem;
+    width: auto;
 }
 
 /* Sections */
@@ -74,27 +89,27 @@ section h2 {
 }
 
 .lesson-card {
-    background: #111111;
+    background: rgba(17, 17, 17, 0.9);
     border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    border: 1px solid #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .lesson-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .lesson-image {
     width: 100%;
-    height: 180px; /* Reduced from default height */
+    height: 200px;
     overflow: hidden;
     position: relative;
 }
@@ -236,12 +251,12 @@ section h2 {
 
 /* Lesson card typography */
 .lesson-card .lesson-content {
-    padding: 0.75rem; /* Reduced padding */
+    padding: 1rem;
     text-align: center;
 }
 
 .lesson-card .lesson-content h2 {
-    font-size: 1.1rem; /* Slightly smaller chapter number */
+    font-size: 1.2rem;
     color: #b0b0b0;
     margin-bottom: 0.25rem;
     font-weight: normal;
@@ -249,11 +264,10 @@ section h2 {
 }
 
 .lesson-card .lesson-content p {
-    font-size: 1.3rem; /* Slightly smaller lesson name */
+    font-size: 1.5rem;
     color: #ffffff;
     font-weight: 500;
     text-align: center;
-    margin: 0;
 }
 
 /* Remove the Italian flag accent and replace with a simple white line */
@@ -297,12 +311,13 @@ section h2 {
         padding: 0.5rem;
     }
 
-    nav {
-        padding: 0.25rem 5%;
-    }
-
     .logo {
         font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        height: 1.5rem;
     }
 
     .lesson-layout {
